@@ -32,7 +32,6 @@ router.post('/api/users/signup',
       email: user.email
     }, process.env.JWT_KEY!);
 
-
     req.session = {
       jwt: userJwt
     }
