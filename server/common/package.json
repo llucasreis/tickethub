@@ -1,6 +1,6 @@
 {
   "name": "@lprs-tickethub/common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "files": [
@@ -11,8 +11,8 @@
     "build": "yarn clean && tsc",
     "clean": "del ./build/*",
     "patch": "version --patch",
-    "patch:publish": "yarn patch && yarn publish",
-    "publish": "publish --access public"
+    "publish": "publish --access public",
+    "push": "yarn build && yarn patch && yarn publish"
   },
   "devDependencies": {
     "del-cli": "^3.0.1",
