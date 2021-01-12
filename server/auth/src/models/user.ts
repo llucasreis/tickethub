@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import { Password } from '../services/password';
+// works on mongoose@5.11.8
 
 // describe the properties to create a new User
 interface UserAttrs {
@@ -7,15 +8,15 @@ interface UserAttrs {
   password: string;
 }
 
-// describe the properties that a User Model has 
-interface UserModel extends mongoose.Model<UserDocument> {
-  build(attrs: UserAttrs): UserDocument;
-} 
-
 // describe the properties that a User Document has
 interface UserDocument extends mongoose.Document {
   email: string;
   password: string;
+}
+
+// describe the properties that a User Model has
+interface UserModel extends mongoose.Model<UserDocument> {
+  build(attrs: UserAttrs): UserDocument;
 }
 
 const userSchema = new mongoose.Schema({

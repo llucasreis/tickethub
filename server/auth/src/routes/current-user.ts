@@ -1,10 +1,9 @@
-import express from 'express';
+import { Router, Request, Response } from 'express';
+import { currentUser } from '@lprs-tickethub/common';
 
-import { currentUser } from '../middlewares/current-user';
+const router = Router();
 
-const router = express.Router();
-
-router.get('/api/users/currentuser', currentUser, (req, res) => {
+router.get('/api/users/currentuser', currentUser, (req: Request, res: Response) => {
 
   res.send({ currentUser: req.currentUser || null });
 });
