@@ -1,6 +1,19 @@
 {
   "name": "@lprs-tickethub/common",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "version": "1.0.1",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn clean && tsc",
+    "clean": "del ./build/*",
+    "publish": "publish --access public"
+  },
+  "devDependencies": {
+    "del-cli": "^3.0.1",
+    "typescript": "^4.1.3"
+  }
 }
